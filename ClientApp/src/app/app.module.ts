@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { AnimalService } from './animal.service';
+import { DataTablesModule } from "angular-datatables";
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -33,6 +34,7 @@ import { CrudAnimalComponent } from './crud-animal/crud-animal.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    DataTablesModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },

@@ -1,21 +1,27 @@
-<a href="#" id="new-button">New</a>
-<table>
-<thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Size</th>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let animalInfo of animalData"> 
-        <td>{{ animalInfo.animalId }}</td>
-        <td>{{ animalInfo.name }}</td>
-        <td>{{ animalInfo.size }}</td>
-        <td>
-            <a href="#" (click)="editRecord(this)">Edit</a>
-            <a href="#" (click)="deleteRecord(this)">Delete</a>
-        </td>
-    </tr>
-</tbody>
+<a class="btn btn-primary mb-3" href="#" id="new-button">New</a>
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="animalData?.length != 0">
+        <tr *ngFor="let animalData of animalData">
+            <td>{{ animalData.animalId }}</td>
+            <td>{{ animalData.name }}</td>
+            <td>{{ animalData.size }}</td>
+            <td>
+                <a class="btn btn-primary ml-2 mr-2" href="#" (click)="editRecord(this)">Edit</a>
+                <a class="btn btn-primary ml-2 mr-2" href="#" (click)="deleteRecord(this)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="animalData?.length == 0">
+        <tr>
+            <td colspan="3" class="no-data-available">No data!</td>
+        </tr>
+    </tbody>
 </table>

@@ -2,9 +2,6 @@
 
 /* Provide sufficient contrast against white background */
 
-/* Import bootstrap in css */
-@import '~bootstrap/dist/css/bootstrap.min.css';
-
 a {
   color: #0366d6;
 }
